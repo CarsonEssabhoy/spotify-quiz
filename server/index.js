@@ -12,7 +12,7 @@ dotenv.config()
 var spotify_client_id = 'fdaa99c613cb4bf9bf318c248586427c';
 var spotify_client_secret = 'be11aa4fe3874ed4a4e0150f2ead388d';
 
-var spotify_redirect_uri = 'http://localhost:5000/auth/callback'
+var spotify_redirect_uri = 'https://spotify-test-unc8.onrender.com/auth/callback'
 
 var generateRandomString = function (length) {
   var text = '';

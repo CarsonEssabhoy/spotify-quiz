@@ -96,18 +96,28 @@ function WebPlayback(props) {
                         <img src={current_track.album.images[0].url} className="now-playing__cover" alt="" />
 
                         <div className="now-playing__side">
-                            {/* <div className="now-playing__name">{current_track.name}</div>
-                            <div className="now-playing__artist">{current_track.artists[0].name}</div> */}
+                            {ifGuess ? (<><div className="now-playing__name">{current_track.name}</div>
+                                        <div className="now-playing__artist">{current_track.artists[0].name}</div></>)
+                                        : '' }
 
-                            <button className="btn-spotify" onClick={() => { player.previousTrack() }} >
+                            <button className="btn-spotify" onClick={() => { 
+                                player.previousTrack();
+                                setIfGuess(false); 
+                                }} >
                                 &lt;&lt;
                             </button>
 
-                            <button className="btn-spotify" onClick={() => { player.togglePlay() }} >
+                            <button className="btn-spotify" onClick={() => { 
+                                player.togglePlay(); 
+                                setIfGuess(false);
+                                }} >
                                 { is_paused ? "PLAY" : "PAUSE" }
                             </button>
 
-                            <button className="btn-spotify" onClick={() => { player.nextTrack() }} >
+                            <button className="btn-spotify" onClick={() => { 
+                                player.nextTrack();
+                                setIfGuess(false);
+                                }} >
                                 &gt;&gt;
                             </button>
 

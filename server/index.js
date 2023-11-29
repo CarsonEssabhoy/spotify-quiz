@@ -28,19 +28,6 @@ var app = express();
 
 app.use(express.static(path.join(__dirname, '../build')));
 
-app.get('/', (req, res) => {
-  res.type('html');
-    res.send(`
-        <html>
-           <head>
-           </head>
-           <body>
-            <div id="root"></div>
-           </body>
-        </html>
-    `)
-})
-
 
 app.get('/auth/login', (req, res) => {
 
